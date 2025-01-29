@@ -249,4 +249,16 @@ const getPhotoById = (id) => {
   return photos.find((photo) => photo.id === id);
 };
 
-export { getAllPhotos, getPhotoById };
+const getAllPhotosEntity = () => {
+  const result = photos.map((photo) => {
+    const entity = {
+      id: photo.id,
+      title: photo.title,
+      url: photo.url,
+    };
+    return entity;
+  });
+  return result;
+};
+
+export { getAllPhotos, getPhotoById, getAllPhotosEntity };
